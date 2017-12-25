@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{35DCBF32-D359-46E8-8F9A-9A0B484E6849}"
 EndProject
@@ -30,6 +30,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{7CA5DF06-2D4A-4E0A-B123-5BA3079FEA7F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieStore.Test", "MovieStore.Test\MovieStore.Test.csproj", "{C46004CF-F5D1-4F34-A827-0BC0D68A4C63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieStore.Business.Contract", "MovieStore.Business.Contract\MovieStore.Business.Contract.csproj", "{04277365-27C3-458C-910E-E8197D92BA29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieStore.Data.Contract", "MovieStore.Data.Contract\MovieStore.Data.Contract.csproj", "{574103E6-8E75-4E80-B21A-658DBA9F6F75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +69,14 @@ Global
 		{C46004CF-F5D1-4F34-A827-0BC0D68A4C63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C46004CF-F5D1-4F34-A827-0BC0D68A4C63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C46004CF-F5D1-4F34-A827-0BC0D68A4C63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04277365-27C3-458C-910E-E8197D92BA29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04277365-27C3-458C-910E-E8197D92BA29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04277365-27C3-458C-910E-E8197D92BA29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04277365-27C3-458C-910E-E8197D92BA29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{574103E6-8E75-4E80-B21A-658DBA9F6F75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{574103E6-8E75-4E80-B21A-658DBA9F6F75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{574103E6-8E75-4E80-B21A-658DBA9F6F75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{574103E6-8E75-4E80-B21A-658DBA9F6F75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,5 +89,7 @@ Global
 		{B8469E48-BA7B-45F5-936B-104B720E23AA} = {35DCBF32-D359-46E8-8F9A-9A0B484E6849}
 		{B62EF718-5DF6-4ECB-8785-1F67C72157A2} = {5EFC289E-3C74-4EAA-8D7C-78039FE8F95C}
 		{C46004CF-F5D1-4F34-A827-0BC0D68A4C63} = {7CA5DF06-2D4A-4E0A-B123-5BA3079FEA7F}
+		{04277365-27C3-458C-910E-E8197D92BA29} = {E3E4ECF8-A30E-4D17-81D3-2E186DB25170}
+		{574103E6-8E75-4E80-B21A-658DBA9F6F75} = {5EFC289E-3C74-4EAA-8D7C-78039FE8F95C}
 	EndGlobalSection
 EndGlobal

@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,6 +42,7 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
@@ -169,6 +171,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MovieStore.Business.Contract\MovieStore.Business.Contract.csproj">
+      <Project>{04277365-27C3-458C-910E-E8197D92BA29}</Project>
+      <Name>MovieStore.Business.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MovieStore.Business\MovieStore.Business.csproj">
+      <Project>{1E51DE06-3373-4DDC-9193-1A24161F68B5}</Project>
+      <Name>MovieStore.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MovieStore.Common\MovieStore.Common.csproj">
+      <Project>{B8469E48-BA7B-45F5-936B-104B720E23AA}</Project>
+      <Name>MovieStore.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
