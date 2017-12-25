@@ -13,14 +13,13 @@ namespace MovieStore.Business
     [Export(typeof(IMovieEngine))]
     public class MovieEngine : IMovieEngine
     {
-        //[Import]
-        //private IMovieRepository movieRepository;
+        [Import]
+        private IMovieRepository movieRepository;
 
         public int Add()
         {
-            //movieRepository = MEFLoader.Container.GetExportedValue<IMovieRepository>();
-            //return movieRepository.Add();
-            return 0;
+            movieRepository = ObjectBase.Container.GetExportedValue<IMovieRepository>();
+            return movieRepository.Add();
         }
     }
 }

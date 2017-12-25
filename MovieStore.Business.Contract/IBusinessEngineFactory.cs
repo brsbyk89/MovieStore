@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace MovieStore.Business.Contract
 {
-    public interface IMovieEngine : IBusinessEngine
+    public interface IBusinessEngineFactory 
     {
-        int Add();
+        T GetBusinessEngine<T>() where T : IBusinessEngine; 
     }
 }

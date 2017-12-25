@@ -148,6 +148,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -173,13 +174,13 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MovieStore.Business.Contract\MovieStore.Business.Contract.csproj">
-      <Project>{04277365-27C3-458C-910E-E8197D92BA29}</Project>
-      <Name>MovieStore.Business.Contract</Name>
+    <ProjectReference Include="..\MovieStore.Bootstrapper\MovieStore.Bootstrapper.csproj">
+      <Project>{83163967-9d6a-47f7-af59-03ad345121a1}</Project>
+      <Name>MovieStore.Bootstrapper</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MovieStore.Business\MovieStore.Business.csproj">
-      <Project>{1E51DE06-3373-4DDC-9193-1A24161F68B5}</Project>
-      <Name>MovieStore.Business</Name>
+    <ProjectReference Include="..\MovieStore.Business.Contract\MovieStore.Business.Contract.csproj">
+      <Project>{04277365-27c3-458c-910e-e8197d92ba29}</Project>
+      <Name>MovieStore.Business.Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\MovieStore.Common\MovieStore.Common.csproj">
       <Project>{B8469E48-BA7B-45F5-936B-104B720E23AA}</Project>

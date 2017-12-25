@@ -1,5 +1,4 @@
-﻿using MovieStore.Business;
-using MovieStore.Business.Contract;
+﻿using MovieStore.Business.Contract;
 using MovieStore.Common;
 using System;
 using System.Collections.Generic;
@@ -10,16 +9,22 @@ using System.Web.Mvc;
 
 namespace MovieStore.API.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
+
         [Import]
-        private IMovieEngine movieEngine;
+        private IBusinessEngineFactory businessEngine;
+
+        //[Import]
+        //private IMovieEngine businessEngine;
 
         public int Index()
         {
-            var d = MEFLoader.Container.SatisfyImportsOnce(this);
-            var k = MEFLoader.Container.GetExportedValue<IMovieEngine>();
-            k.Add();
+            //var d =  ObjectBase.Container.GetExportedValue<IMovieEngine>();
+            // d.Add();
+            var engine = businessEngine.GetBusinessEngine<IMovieEngine>();
+            engine.Add();
+
             return 0;
         }
     }

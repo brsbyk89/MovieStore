@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IBusinessEngine.cs" />
+    <Compile Include="IBusinessEngineFactory.cs" />
     <Compile Include="IMovieEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
