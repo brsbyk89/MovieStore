@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MovieStore.Bootstrapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -17,6 +18,7 @@ namespace MovieStore.API
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+            MEFLoader.Init();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

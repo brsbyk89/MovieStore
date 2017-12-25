@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -39,8 +40,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BusinessEngineFactory.cs" />
+    <Compile Include="MovieEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MovieStore.Business.Contract\MovieStore.Business.Contract.csproj">
+      <Project>{04277365-27c3-458c-910e-e8197d92ba29}</Project>
+      <Name>MovieStore.Business.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MovieStore.Common\MovieStore.Common.csproj">
+      <Project>{B8469E48-BA7B-45F5-936B-104B720E23AA}</Project>
+      <Name>MovieStore.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MovieStore.Data.Contract\MovieStore.Data.Contract.csproj">
+      <Project>{574103E6-8E75-4E80-B21A-658DBA9F6F75}</Project>
+      <Name>MovieStore.Data.Contract</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

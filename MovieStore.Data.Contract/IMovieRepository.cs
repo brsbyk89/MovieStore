@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MovieStore.Business
+namespace MovieStore.Data.Contract
 {
-    public class Class1
+    public interface IMovieRepository
     {
+        int Add();
     }
 }

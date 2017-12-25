@@ -1,16 +1,31 @@
-﻿using System;
+﻿using MovieStore.Business.Contract;
+using MovieStore.Common;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
 namespace MovieStore.API.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        public ActionResult Index()
+
+        [Import]
+        private IBusinessEngineFactory businessEngine;
+
+        //[Import]
+        //private IMovieEngine businessEngine;
+
+        public int Index()
         {
-            return View();
+            //var d =  ObjectBase.Container.GetExportedValue<IMovieEngine>();
+            // d.Add();
+            var engine = businessEngine.GetBusinessEngine<IMovieEngine>();
+            engine.Add();
+
+            return 0;
         }
     }
 }

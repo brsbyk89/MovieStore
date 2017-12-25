@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MovieStore.Data
+namespace MovieStore.Business.Contract
 {
-    public class Class1
+    public interface IMovieEngine : IBusinessEngine
     {
+        int Add();
     }
 }
