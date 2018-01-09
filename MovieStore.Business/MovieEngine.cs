@@ -19,7 +19,7 @@ namespace MovieStore.Business
         public int Add()
         {
             movieRepository = ObjectBase.Container.GetExportedValue<IMovieRepository>();
-            return movieRepository.Add();
+            //return movieRepository.
         }
     }
 }

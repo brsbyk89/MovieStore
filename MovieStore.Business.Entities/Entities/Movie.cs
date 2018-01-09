@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace MovieStore.Business.Entities
 {
-    public class Class1
+    public class Movie : ModelBase
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }
