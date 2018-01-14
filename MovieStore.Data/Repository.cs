@@ -1,6 +1,8 @@
-﻿using MovieStore.Data.Contract;
+﻿using MovieStore.Business.Entities;
+using MovieStore.Data.Contract;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using System.Data.Entity;
 using System.Data.Entity.Core;
 using System.Linq;
@@ -9,26 +11,28 @@ using System.Threading.Tasks;
 
 namespace MovieStore.Data
 {
-    public class EntityFrameworkRepository<T, TEntityKey, D> : IRepository<T,D>
-        where T : class, IIdentifiableEntity<TEntityKey>, new()
-        where D : DbContext, new() 
-   
+    public class Repository<T> : IRepository<T> where T : ModelBase
+       
     {
         private DbSet _dbSet;
+        private readonly DbContext _dbContext;
 
-        public EntityFrameworkRepository()
+        public Repository()
         {
-
+            _dbContext = new SQLDBContext("DevSQL");
+            _dbSet = _dbContext.Set<T>();
         }
 
-        public EntityFrameworkRepository(DbContext dbContext)
+        public Repository(DbContext dbContext)
         {
-            _dbSet = D.Set<TEntityKey>();
+            _dbContext = dbContext;
+            _dbSet = _dbContext.Set<T>();
         }
 
         public void Create(T entity)
         {
             _dbSet.Add(entity);
+            _dbContext.SaveChanges();
         }
 
         public void Delete(int id)
@@ -36,13 +40,17 @@ namespace MovieStore.Data
             var entity = Get(id);
 
             if (entity != null)
+            {
                 _dbSet.Remove(entity);
+                _dbContext.SaveChanges();
+            }
         }
 
         public void Delete(T entity)
         {
             _dbSet.Attach(entity);
             _dbSet.Remove(entity);
+            _dbContext.SaveChanges();
         }
 
         public T Get(int id)
@@ -53,7 +61,8 @@ namespace MovieStore.Data
         public void Update(T entity)
         {
             _dbSet.Attach(entity);
-            D.Entry(entity).State = EntityState.Modified;
+            _dbContext.Entry(entity).State = EntityState.Modified;
+            _dbContext.SaveChanges();
         }
     }
 }

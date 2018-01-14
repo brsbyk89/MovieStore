@@ -49,6 +49,10 @@
       <Project>{04277365-27c3-458c-910e-e8197d92ba29}</Project>
       <Name>MovieStore.Business.Contract</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MovieStore.Business.Entities\MovieStore.Business.Entities.csproj">
+      <Project>{3B93F2DE-3D47-4932-8C33-2E35BB881317}</Project>
+      <Name>MovieStore.Business.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MovieStore.Common\MovieStore.Common.csproj">
       <Project>{B8469E48-BA7B-45F5-936B-104B720E23AA}</Project>
       <Name>MovieStore.Common</Name>

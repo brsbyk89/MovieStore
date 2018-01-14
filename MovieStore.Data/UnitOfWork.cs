@@ -1,4 +1,5 @@
-﻿using MovieStore.Data;
+﻿using MovieStore.Business.Entities;
+using MovieStore.Data;
 using MovieStore.Data.Contract;
 using System;
 using System.Collections.Generic;
@@ -9,10 +10,12 @@ using System.Threading.Tasks;
 
 namespace MovieStore.Data
 {
-    public class UnitOfWork : IUnitOfWork
+    //public class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IDisposable
     {
         private readonly SQLDBContext _dbContext;
         private bool disposed = false;
+        private Dictionary<string, object> repositories;
 
         public UnitOfWork(SQLDBContext dbContext)
         {
@@ -24,9 +27,22 @@ namespace MovieStore.Data
             _dbContext = dbContext;
         }
 
-        public IRepository<T> GetRepository<T>() where T : class
+        public Repository<T> GetRepository<T>() where T : ModelBase
         {
-            return new EntityFrameworkRepository<T>(_dbContext);
+            if (repositories == null)
+            {
+                repositories = new Dictionary<string, object>();
+            }
+
+            var type = typeof(T).Name;
+
+            if (!repositories.ContainsKey(type))
+            {
+                var repositoryType = typeof(Repository<>);
+                var repositoryInstance = Activator.CreateInstance(repositoryType.MakeGenericType(typeof(T)), _dbContext);
+                repositories.Add(type, repositoryInstance);
+            }
+            return (Repository<T>)repositories[type];
 
         }
 

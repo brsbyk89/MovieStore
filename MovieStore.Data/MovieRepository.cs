@@ -11,12 +11,11 @@ using System.Threading.Tasks;
 namespace MovieStore.Data
 {
     [Export(typeof(IMovieRepository))]
-    public class MovieRepository : EntityFrameworkRepository<Movie>, IMovieRepository
+    public class MovieRepository : Repository<Movie>, IMovieRepository
     {
         public MovieRepository()
         {
-
+           
         }
-        
     }
 }

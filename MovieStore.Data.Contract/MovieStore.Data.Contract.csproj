@@ -50,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IDataRepository.cs" />
+    <Compile Include="IDataRepositoryFactory.cs" />
     <Compile Include="IIdentifiableEntity.cs" />
     <Compile Include="IMovieRepository.cs" />
     <Compile Include="IRepository.cs" />

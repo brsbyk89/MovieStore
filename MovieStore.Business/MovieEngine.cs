@@ -1,4 +1,5 @@
 ﻿using MovieStore.Business.Contract;
+using MovieStore.Business.Entities;
 using MovieStore.Common;
 using MovieStore.Data.Contract;
 using System;
@@ -14,12 +15,14 @@ namespace MovieStore.Business
     public class MovieEngine : IMovieEngine
     {
         [Import]
-        private IMovieRepository movieRepository;
+        private IDataRepositoryFactory _dataRepositoryFactory;
 
         public int Add()
         {
-            movieRepository = ObjectBase.Container.GetExportedValue<IMovieRepository>();
-            //return movieRepository.
+            var movie = new Movie() { Id = 1, Name = "Test",CreationDate=DateTime.Now,LastModifyDate =DateTime.Now };
+            _dataRepositoryFactory.GetDataRepository<IMovieRepository>().Create(movie);
+
+            return 0;
         }
     }
 }

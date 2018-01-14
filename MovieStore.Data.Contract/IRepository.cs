@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MovieStore.Business.Entities;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MovieStore.Data.Contract
 {
-    public interface IRepository<T,D> where T : class where D : DbContext, new()
+    public interface IRepository<T> where T : ModelBase
     {
         void Create(T entity);
         void Update(T entity);
